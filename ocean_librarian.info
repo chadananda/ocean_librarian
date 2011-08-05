@@ -1,0 +1,4 @@
+name = Ocean Librarian
+description = Provides tools for managing the distributed Ocean library http://bahai-education.org/ocean
+package = * Ocean 
+core = 6.x

@@ -1,0 +1,106 @@
+<?php
+// $Id$
+
+/**
+ * @file
+ * Search Suggest module install file
+ *
+ * Search Suggest tracks refferers from search engines, parses their keywords and SERPs then
+ * aggregates and analyzes that information to predict which keywords have the best growth
+ * potential for each page. This moves SEO from speculative to interactive.
+ * 
+ *
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function ocean_librarian_install() {  // Create my tables.
+  drupal_install_schema('ocean_librarian');
+}
+
+/**
+ * Implementation of hook_uninstall().
+ */
+function ocean_librarian_uninstall() { // Drop my tables.
+  drupal_uninstall_schema('ocean_librarian');
+}
+
+/*
+ * update our schema
+ *
+function ocean_librarian_update_1() {
+  $ret = array();
+  db_add_field($ret, 'kw_targets', 'changed', array(
+        'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0,
+        'description' => t('Link modification date.'),
+  ));
+  return $ret;
+}
+*/
+
+
+/**
+ * Define our schema
+ */
+function ocean_librarian_schema() {
+  /* 
+   $schema['ocean_books'] = array(
+    'description' => t('Ocean Books'),
+    'fields' => array(
+
+      'bid' => array('type' => 'serial', 'not null' => TRUE, ),
+
+
+      'nid' => array(
+        'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0,
+        'description' => t('Hit Page'),
+       ),
+
+      'time' => array(
+        'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0,
+        'description' => t('Hit time'),
+       ),
+
+      'engine' => array(
+        'type' => 'varchar', 'length' => 80, 'not null' => TRUE, 'default' => '',
+        'description' => t('Search engine host'),
+       ),
+
+      'kw' => array(
+        'type' => 'varchar', 'length' => 80, 'not null' => TRUE, 'default' => '',
+        'description' => t('Cleaned up keyword phrase.'),
+       ),
+
+      'serp' => array(
+        'type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0,
+        'description' => t('Search engine results PAGE (not position)'),
+       ),
+        
+      'referrer_string' => array(
+        'type' => 'varchar', 'length' => 240, 'not null' => TRUE, 'default' => '',
+        'description' => t('TEST ONLY - FULL REFERRER STRING'),
+       ),
+  
+  
+
+     ), 
+    'indexes' => array(
+   //   'search_nid'           => array('nid'),
+   //   'search_kw'            => array('kw'),
+   //   'search_engine'        => array('engine'),
+   //   'search_time'          => array('time'),
+      ),
+
+   // 'unique keys' => array('target_link' => array('kw', 'url'),),
+
+    'primary key' => array('bid'),
+    ); 
+
+  return $schema;  */
+}
+
+
+
+
+
